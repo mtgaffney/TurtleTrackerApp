@@ -38,7 +38,8 @@ for lineString in line_list:
     obs_lat = lineData[6]
     obs_long = lineData[7]
     
-    #Print the location of sara
-    print(f"Record {record_id} indicates Sara was seen at lat: {obs_lat}, lon: {obs_long} on {obs_date}")
-    date_dict[record_id] = obs_date
-    coord_dict[record_id] = (obs_lat,obs_long)
+    #Print the location of sara if the lc is 1,2, or 3
+    if obs_lc in ("1","2","3"):
+        print(f"Record {record_id} indicates Sara was seen at lat: {obs_lat}, lon: {obs_long} on {obs_date}")
+        date_dict[record_id] = obs_date
+        coord_dict[record_id] = (obs_lat,obs_long)
